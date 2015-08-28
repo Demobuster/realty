@@ -1,5 +1,6 @@
 package com.petukhov.estate;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +28,8 @@ public class SearchController {
 
 	@RequestMapping(value = "/addProperty", method = RequestMethod.GET)
 	public ModelAndView addPropertyPage() {
-		ModelAndView mav = new ModelAndView("addProperty", "command", new PropModel());
+		ModelAndView mav = new ModelAndView("addProperty", "command",
+				new PropModel());
 		return mav;
 	}
 
@@ -35,12 +37,34 @@ public class SearchController {
 	public ModelAndView addPropertyToDB(@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
 
 		propertyService.addProperty(propInfo.getPropAddress(), propInfo.getPropDescription(), propInfo.getPropFee());
+		
+		String utf8ResultAddress = new String();
+		String utf8ResultDescription = new String();
+		String utf8ResultFee = new String();
+		
+		try {
+			String defaultAddress = new String(propInfo.getPropAddress());
+			String defaultDescription = new String(propInfo.getPropDescription());
+			String defaultFee = new String(propInfo.getPropFee());
+
+			byte[] utf8AddressBytes = defaultAddress.getBytes("UTF8");
+			byte[] utf8DescriptionBytes = defaultDescription.getBytes("UTF8");
+			byte[] utf8FeeBytes = defaultFee.getBytes("UTF8");
+
+			utf8ResultAddress = new String(utf8AddressBytes, "UTF8");
+			utf8ResultDescription = new String(utf8DescriptionBytes, "UTF8");
+			utf8ResultFee = new String(utf8FeeBytes, "UTF8");
+
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+
+		}
 
 		ModelAndView mav = new ModelAndView("done");
-		mav.addObject("address", propInfo.getPropAddress());
-		mav.addObject("description", propInfo.getPropDescription());
-		mav.addObject("fee", propInfo.getPropFee());
-		
+		mav.addObject("address", utf8ResultAddress);
+		mav.addObject("description", utf8ResultDescription);
+		mav.addObject("fee", utf8ResultFee);
+
 		return mav;
 	}
 
@@ -51,7 +75,8 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "/doSearch", method = RequestMethod.POST)
-	public ModelAndView search(@RequestParam("searchText") String searchText) throws Exception {
+	public ModelAndView search(@RequestParam("searchText") String searchText)
+			throws Exception {
 		List<Prop> allFound = propertyService.searchForProperty(searchText);
 		List<PropModel> propModels = new ArrayList<PropModel>();
 

@@ -41,41 +41,7 @@
 		aria-labelledby="mySmallModalLabel">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
-				<table class="table table-striped" id="display">
-						<tr>
-							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=ru"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/russia.png" 
-                						alt="" height="20" width="20">
-            					</a>
-            				</td>
-            				<td>
-            					Русский
-            				</td>
-    					</tr>
-    					<tr>
-							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=en"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/usa.png" 
-                						alt="" height="20" width="20">
-            					</a>
-            				</td>
-            				<td>
-            					English
-            				</td>
-    					</tr>
-    					<tr>
-							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=de"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/germany.png" 
-                						alt="" height="20" width="20">
-            					</a>
-            				</td>
-            				<td>
-            					Deutsche
-            				</td>
-    					</tr>
-					</table>				
+				<%@include file="languages.jsp"%>		
 			</div>
 		</div>
 	</div>
