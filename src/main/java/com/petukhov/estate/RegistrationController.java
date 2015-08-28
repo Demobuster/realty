@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.common.base.Preconditions;
 import com.petukhov.estate.domain.UserRoles;
 import com.petukhov.estate.domain.Users;
 import com.petukhov.estate.service.UserRolesService;
@@ -27,6 +28,13 @@ public class RegistrationController {
 	public String registration(
 			@RequestParam(value = "username", required = false) String username,
 			@RequestParam(value = "password", required = false) String password) {
+		
+		try {
+			Preconditions.checkArgument(!"".equals(username));
+			Preconditions.checkArgument(!"".equals(password));
+		} catch(IllegalArgumentException iae) {
+			return "redirect:/login?error";
+		}
 
 		if (username != null && password != null) {
 			Users user = new Users();

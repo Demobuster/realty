@@ -1,6 +1,5 @@
 package com.petukhov.estate;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.common.base.Charsets;
 import com.petukhov.estate.service.HireService;
 import com.petukhov.estate.domain.Prop;
 import com.petukhov.estate.domain.PropModel;
@@ -34,31 +34,19 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "/addPropertyToDB", method = RequestMethod.POST)
-	public ModelAndView addPropertyToDB(@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
+	public ModelAndView addPropertyToDB(
+			@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
 
-		propertyService.addProperty(propInfo.getPropAddress(), propInfo.getPropDescription(), propInfo.getPropFee());
-		
-		String utf8ResultAddress = new String();
-		String utf8ResultDescription = new String();
-		String utf8ResultFee = new String();
-		
-		try {
-			String defaultAddress = new String(propInfo.getPropAddress());
-			String defaultDescription = new String(propInfo.getPropDescription());
-			String defaultFee = new String(propInfo.getPropFee());
+		propertyService.addProperty(propInfo.getPropAddress(),
+				propInfo.getPropDescription(), propInfo.getPropFee());
 
-			byte[] utf8AddressBytes = defaultAddress.getBytes("UTF8");
-			byte[] utf8DescriptionBytes = defaultDescription.getBytes("UTF8");
-			byte[] utf8FeeBytes = defaultFee.getBytes("UTF8");
+		byte[] utf8AddressBytes = propInfo.getPropAddress().getBytes(Charsets.UTF_8);
+		byte[] utf8DescriptionBytes = propInfo.getPropDescription().getBytes(Charsets.UTF_8);
+		byte[] utf8FeeBytes = propInfo.getPropFee().getBytes(Charsets.UTF_8);
 
-			utf8ResultAddress = new String(utf8AddressBytes, "UTF8");
-			utf8ResultDescription = new String(utf8DescriptionBytes, "UTF8");
-			utf8ResultFee = new String(utf8FeeBytes, "UTF8");
-
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-
-		}
+		String utf8ResultAddress = new String(utf8AddressBytes, Charsets.UTF_8);
+		String utf8ResultDescription = new String(utf8DescriptionBytes, Charsets.UTF_8);
+		String utf8ResultFee = new String(utf8FeeBytes, Charsets.UTF_8);
 
 		ModelAndView mav = new ModelAndView("done");
 		mav.addObject("address", utf8ResultAddress);

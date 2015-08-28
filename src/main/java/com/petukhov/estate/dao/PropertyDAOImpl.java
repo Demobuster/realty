@@ -3,6 +3,7 @@ package com.petukhov.estate.dao;
 import java.util.List;
 import java.util.UUID;
 
+import com.petukhov.estate.config.CacheConfig;
 import com.petukhov.estate.domain.Prop;
 
 import org.hibernate.Session;
@@ -25,7 +26,7 @@ public class PropertyDAOImpl implements PropertyDAO {
 
 	@Override
 	@Transactional
-	@CacheEvict(value="prop", allEntries=true)
+	@CacheEvict(value = CacheConfig.CACHED_PROPERTY, allEntries = true)
 	public void addProperty(String address, String description, String fee) {
 		Session session = mySessionFactory.getCurrentSession();
 
@@ -44,7 +45,7 @@ public class PropertyDAOImpl implements PropertyDAO {
 	@Override
 	@Transactional
 	@SuppressWarnings("unchecked")
-	@Cacheable("prop")
+	@Cacheable(CacheConfig.CACHED_PROPERTY)
 	public List<Prop> listProperty() {
 		return mySessionFactory.getCurrentSession()
 				.createQuery("from Prop").list();

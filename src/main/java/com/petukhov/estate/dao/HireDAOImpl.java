@@ -32,9 +32,6 @@ public class HireDAOImpl implements HireDAO {
         if (null != hire) {
             mySessionFactory.getCurrentSession().delete(hire);
         }
-    	
-//    	mySessionFactory.getCurrentSession().createQuery("DELETE FROM Hire H WHERE H.id = :id")
-//		.setParameter("id", id);
     }
 
 	@SuppressWarnings("unchecked")
