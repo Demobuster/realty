@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Preconditions;
 import com.petukhov.estate.service.HireService;
 import com.petukhov.estate.domain.Prop;
 import com.petukhov.estate.domain.PropModel;
@@ -25,14 +26,7 @@ public class SearchController {
 
 	@Autowired
 	private PropertyService propertyService;
-
-	@RequestMapping(value = "/addProperty", method = RequestMethod.GET)
-	public ModelAndView addPropertyPage() {
-		ModelAndView mav = new ModelAndView("addProperty", "command",
-				new PropModel());
-		return mav;
-	}
-
+	
 	@RequestMapping(value = "/addPropertyToDB", method = RequestMethod.POST)
 	public ModelAndView addPropertyToDB(
 			@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
@@ -63,8 +57,14 @@ public class SearchController {
 	}
 
 	@RequestMapping(value = "/doSearch", method = RequestMethod.POST)
-	public ModelAndView search(@RequestParam("searchText") String searchText)
-			throws Exception {
+	public ModelAndView search(@RequestParam("searchText") String searchText) throws Exception {
+		
+		try { 
+			Preconditions.checkArgument(!"".equals(searchText));
+		} catch (IllegalArgumentException iae) {
+			return new ModelAndView("property");
+		}
+		
 		List<Prop> allFound = propertyService.searchForProperty(searchText);
 		List<PropModel> propModels = new ArrayList<PropModel>();
 
@@ -82,6 +82,7 @@ public class SearchController {
 
 		ModelAndView mav = new ModelAndView("foundProp");
 		mav.addObject("foundProp", propModels);
+		
 		return mav;
 	}
 

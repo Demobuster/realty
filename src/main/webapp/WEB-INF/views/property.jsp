@@ -4,7 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="msg" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="msg" %>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -42,6 +42,7 @@
 	<msg:message code="Search.search" var="search"/>
 	<msg:message code="Search.reset" var="reset"/>
 	<msg:message code="Search.searchHelp" var="searchHelp"/>
+	<msg:message code="Main.backToExplorerLink" var="backToExplorerLink"/>
 	
 
 	<div class="container">
@@ -86,7 +87,10 @@
 		</div>
 	</div>
 
-	<%@include file="footer.jsp"%>
+	<jsp:include page="footer.jsp">
+    	<jsp:param name="linkToReturnTo" value="${ backToExplorerLink }"/>
+        <jsp:param name="pageToReturnTo" value="property"/>
+    </jsp:include>
 
 </body>
 </html>

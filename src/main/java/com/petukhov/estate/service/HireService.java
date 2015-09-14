@@ -13,4 +13,6 @@ public interface HireService {
     public List<Hire> listUsernameHire(String username);
 
     public void removeHire(Integer id);
+    
+    public void removeEveryMatch(String username);
 }

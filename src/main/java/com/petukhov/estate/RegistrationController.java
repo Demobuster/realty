@@ -36,7 +36,7 @@ public class RegistrationController {
 			return "redirect:/login?error";
 		}
 
-		if (username != null && password != null) {
+		if (null != username && null != password) {
 			Users user = new Users();
 			UserRoles userRoles = new UserRoles();
 
@@ -61,4 +61,8 @@ public class RegistrationController {
 		return new ModelAndView("registration");
 	}
 	
+	@RequestMapping(value = { "/well" }, method = RequestMethod.GET)
+	public ModelAndView getWellPage() {
+		return new ModelAndView("well");
+	}
 }

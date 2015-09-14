@@ -51,7 +51,7 @@ public class PropertyManagementController {
 	@Transactional
 	@RequestMapping(value = { "getUsersHire" }, method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> userPage() {
+	public Map<String, Object> getUsersHireByJSON() {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetail = (UserDetails) auth.getPrincipal();
@@ -78,7 +78,7 @@ public class PropertyManagementController {
 
 	@Transactional
 	@RequestMapping(value = { "property" }, method = RequestMethod.GET)
-	public ModelAndView addPage() {
+	public ModelAndView propertyPage() {
 
 		ModelAndView model = new ModelAndView();
 		model.addObject("property", new Prop());
@@ -89,7 +89,7 @@ public class PropertyManagementController {
 	}
 	
 	@RequestMapping(value = { "/userPage" }, method = RequestMethod.GET)
-	public ModelAndView getDummyPage() {
+	public ModelAndView userPage() {
 		return new ModelAndView("userPage");
 	}
 	

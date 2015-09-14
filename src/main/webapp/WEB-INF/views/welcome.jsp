@@ -18,23 +18,21 @@
 
 <title>Welcome to Realty</title>
 
-<!-- Bootstrap core CSS -->
+<!-- Bootstrap core css -->
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA"
 	rel="stylesheet" />
 <link href="https://googledrive.com/host/0BweevD4Le1puU1JPTkJiVFBaanM/"
 	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 </head>
-<body>
+<body style="background: url('${ backgroundIMG }') no-repeat scroll 0px 100% / cover transparent;">
 
 	<msg:message code="Welcome.motto" var="motto" />
 	<msg:message code="Welcome.homeButton" var="home" />
 	<msg:message code="Welcome.contactButton" var="contact" />
 	<msg:message code="Welcome.enterButton" var="enter" />
-
 
 	<!-- languages modal -->
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
@@ -83,9 +81,9 @@
 		</div>
 	</div>
 
-
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- bootstrap.min.js -->
-	<script type='text/javascript'
-		src='https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk'></script>
+	<script type='text/javascript' src='https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk'></script>
 </body>
 </html>

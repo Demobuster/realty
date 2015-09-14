@@ -1,5 +1,4 @@
 package com.petukhov.estate.domain;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,12 +20,6 @@ public class Hire {
     
     @Column(name = "ADDRESS")
     private String address;
-
-    @Column(name = "CHECKIN")
-    private Date checkin;
-    
-    @Column(name = "CHECKOUT")
-    private Date checkout;
 
     @Column(name = "FEE")
     private Integer fee;
@@ -53,22 +46,6 @@ public class Hire {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public Date getCheckin() {
-		return checkin;
-	}
-
-	public void setCheckin(Date checkin) {
-		this.checkin = checkin;
-	}
-
-	public Date getCheckout() {
-		return checkout;
-	}
-
-	public void setCheckout(Date checkout) {
-		this.checkout = checkout;
 	}
 
 	public Integer getFee() {

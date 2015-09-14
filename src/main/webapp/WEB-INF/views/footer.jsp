@@ -1,11 +1,9 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="msg" %>
+	
 
-<msg:message code="Main.backToExplorerLink" var="backToExplorerLink"/>
-
-<div class="container">
+	<div class="container">
 		<!-- FOOTER -->
 		<footer>
-			<p class="pull-right"><a href="property">${ backToExplorerLink }</a></p>
+			<p class="pull-right"><a href="${ param.pageToReturnTo }">${ param.linkToReturnTo }</a></p>
 			<p>&copy; 2015 Serzh Petukhov</p>
 		</footer>
 	</div>

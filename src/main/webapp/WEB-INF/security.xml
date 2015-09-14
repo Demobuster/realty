@@ -11,6 +11,10 @@
 		<intercept-url pattern="/property**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
 		<intercept-url pattern="/userPage**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
 		<intercept-url pattern="/addProperty**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/dashboard**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/usersManagement**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/getUsersList**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/getUsersHire**" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')" />
 		
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />

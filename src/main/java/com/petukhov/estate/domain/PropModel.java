@@ -30,5 +30,4 @@ public class PropModel {
 	public void setPropFee(String propFee) {
 		this.propFee = propFee;
 	}
-
 }

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
  
 
 
+
 import com.petukhov.estate.dao.HireDAO;
 import com.petukhov.estate.domain.Hire;
  
@@ -40,6 +41,12 @@ public class HireServiceImpl implements HireService {
 	@Transactional
 	public List<Hire> listUsernameHire(String username) {
 		return hireDAO.listUsernameHire(username);
+	}
+
+	@Override
+	@Transactional
+	public void removeEveryMatch(String username) {
+		hireDAO.removeEveryMatch(username);
 	}
     
 }

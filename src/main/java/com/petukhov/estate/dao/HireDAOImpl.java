@@ -7,6 +7,7 @@ import com.petukhov.estate.domain.Hire;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class HireDAOImpl implements HireDAO {
@@ -21,11 +22,11 @@ public class HireDAOImpl implements HireDAO {
     @SuppressWarnings("unchecked")
     @Override
     public List<Hire> listHire() {
-    	
-        return mySessionFactory.getCurrentSession().createQuery("from Hire").list();
+        return mySessionFactory.getCurrentSession().createQuery("from Users").list();
     }
     
     @Override
+    @Transactional
     public void removeHire(Integer id) {
     	Hire hire = (Hire) mySessionFactory.getCurrentSession().get(Hire.class, id);
     	
@@ -40,5 +41,16 @@ public class HireDAOImpl implements HireDAO {
 		return mySessionFactory.getCurrentSession().createQuery("FROM Hire H WHERE H.username = :username")
 				.setParameter("username", username)
 				.list();
+	}
+
+	@Override
+	public void removeEveryMatch(String username) {
+		List<Hire> usernameHire = listUsernameHire(username);
+		
+		if (null != usernameHire) {
+			for (Hire hiredItem: usernameHire) {
+				mySessionFactory.getCurrentSession().delete(hiredItem);
+			}
+		}
 	}
 }

@@ -17,4 +17,9 @@ public class UserRolesServiceImpl implements UserRolesService {
 		userRolesDAO.addUserRoles(userRoles);
 	}
 
+	@Override
+	public void removeUser(String username) {
+		userRolesDAO.removeUser(username);
+	}
+
 }

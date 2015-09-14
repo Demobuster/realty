@@ -33,6 +33,7 @@
 	<msg:message code="Main.feeTab" var="fee"/>
 	<msg:message code="Main.optionTab" var="option"/>
 	<msg:message code="Main.hireButton" var="hire"/>
+	<msg:message code="Main.backToExplorerLink" var="backToExplorerLink"/>
 	
 	<div class="container-fluid">
 		<div class="row">
@@ -66,8 +67,10 @@
 		</div>
 	</div>
 
-	<%@include file="footer.jsp"%>
-	
+	<jsp:include page="footer.jsp">
+    	<jsp:param name="linkToReturnTo" value="${ backToExplorerLink }"/>
+        <jsp:param name="pageToReturnTo" value="property"/>
+    </jsp:include>
 	
 </body>
 </html>
