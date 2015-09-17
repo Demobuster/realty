@@ -1,9 +1,17 @@
 package com.petukhov.estate;
 
+import java.util.Collection;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.mobile.device.Device;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -20,6 +28,8 @@ public class SecurityController {
 	@Autowired
 	private UsersService usersService;
 	
+	private String backgroundIMG = "https://googledrive.com/host/0BweevD4Le1puMnhkcXhCUlV0WXM";
+	
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
 	public String defaultPage() {
 		return "redirect:/welcome";
@@ -28,7 +38,6 @@ public class SecurityController {
 	@RequestMapping(value = { "/welcome" }, method = RequestMethod.GET)
 	public ModelAndView getWelcomePage(Device device) {		
 		ModelAndView mav = new ModelAndView("welcome");
-		String backgroundIMG = "https://googledrive.com/host/0BweevD4Le1puMnhkcXhCUlV0WXM";
 		
 		if (device.isMobile() || device.isTablet()) {
 			backgroundIMG = "https://googledrive.com/host/0BweevD4Le1pueGFyOFUxcmo3ZWM";
@@ -55,7 +64,8 @@ public class SecurityController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(
 			@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
+			@RequestParam(value = "logout", required = false) String logout,
+															  HttpServletRequest request) {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
@@ -66,8 +76,15 @@ public class SecurityController {
 			model.addObject("msg", "You've been logged out successfully.");
 			model.setViewName("welcome");
 			
+			model.addObject("backgroundIMG", backgroundIMG);
+			
 			return model;
 		}
+		
+		if (request.isUserInRole("ROLE_ADMIN")) {
+			request.getSession().setAttribute("isAdmin", "true");
+		} 
+		
 		model.setViewName("login");
 
 		return model;

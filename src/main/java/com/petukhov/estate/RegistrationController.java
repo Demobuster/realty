@@ -1,6 +1,7 @@
 package com.petukhov.estate;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,8 @@ public class RegistrationController {
 		try {
 			Preconditions.checkArgument(!"".equals(username));
 			Preconditions.checkArgument(!"".equals(password));
+			
+			password = new String(PasswordsHashing.getHashedPassword(password));
 		} catch(IllegalArgumentException iae) {
 			return "redirect:/login?error";
 		}
@@ -65,4 +68,13 @@ public class RegistrationController {
 	public ModelAndView getWellPage() {
 		return new ModelAndView("well");
 	}
+} 
+
+class PasswordsHashing {
+	public static String getHashedPassword(String password) {
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
+		return new String(passwordEncoder.encode(password));
+	}
+	
 }

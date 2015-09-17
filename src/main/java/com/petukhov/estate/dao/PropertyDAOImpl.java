@@ -86,7 +86,7 @@ public class PropertyDAOImpl implements PropertyDAO {
 			org.apache.lucene.search.Query query = qb.keyword()
 					.onFields("description", "address")
 					.ignoreAnalyzer()
-					.matching(searchText)
+					.matching(searchText.toLowerCase())
 					.createQuery();
 
 			org.hibernate.Query hibQuery = fullTextSession.createFullTextQuery(

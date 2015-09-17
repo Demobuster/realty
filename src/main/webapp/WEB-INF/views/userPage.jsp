@@ -32,7 +32,7 @@ $.getJSON('getUsersHire', function(data) {
             $('<td>').text(data.hires[i].address),
             $('<td>').text(data.hires[i].fee),
             $('<td>').append(
-            		$('<a href=delete/' + data.hires[i].id + '>').text('<c:out value="${ option }"/>'))
+            		$('<a href=delete/' + data.hires[i].id + '>').text('Unhire'))
         ).appendTo('#display');
 	}
 });

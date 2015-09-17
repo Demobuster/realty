@@ -45,13 +45,13 @@
 
 				<div class="row placeholders">
 					<div class="col-xs-6 col-sm-3 placeholder">
-						<a href="usersManagement"><img src="http://box-serzh.rhcloud.com/images/kiss.png" 
+						<a href="usersManagement"><img src="https://googledrive.com/host/0BweevD4Le1puck9STzVHWjI2b0U" 
 						class="img-responsive"></a>
 						<h4>${ labelUsers }</h4>
 						<span class="text-muted">${ descriptionUsers }</span>
 					</div>
 					<div class="col-xs-6 col-sm-3 placeholder">
-						<a href="addProperty"><img src="http://box-serzh.rhcloud.com/images/surveillance.png" 
+						<a href="addProperty"><img src="https://googledrive.com/host/0BweevD4Le1puNkRCWnhobGV0bEk" 
 						class="img-responsive"></a>
 						<h4>${ labelProp }</h4>
 						<span class="text-muted">${ descriptionProp }</span>

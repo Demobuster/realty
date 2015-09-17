@@ -25,13 +25,22 @@
 			username-parameter="username"
 			password-parameter="password" />
 		<logout logout-success-url="/login?logout"  />
+		
 		<!-- enable csrf protection -->
 		<csrf/>
+		
+		<!-- Prevent multi-enter. Only unique worksession allowed. Paralell access will be denied and redirected
+		 	 to 'authentication-failure-url' page -->
+		<session-management>
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management>
+
 	</http>
 	
 	<!-- Select users and user_roles from database -->
 	<authentication-manager>
 		<authentication-provider>
+			<password-encoder ref="encoder" /> 
 			<jdbc-user-service data-source-ref="myDataSource"
 				users-by-username-query=
 					"select username,password, enabled from USERS where username=?"
@@ -39,5 +48,9 @@
 					"select username, role from USER_ROLES where username =?  " />
 		</authentication-provider>
 	</authentication-manager>
+	
+	<beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<beans:constructor-arg name="strength" value="10" />
+	</beans:bean>
 
 </beans:beans>
