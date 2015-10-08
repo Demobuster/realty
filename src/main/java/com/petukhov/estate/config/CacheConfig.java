@@ -27,8 +27,8 @@ public class CacheConfig implements CachingConfigurer {
 		SimpleCacheManager cacheManager = new SimpleCacheManager();
 		
 		GuavaCache cache = new GuavaCache(CACHED_PROPERTY, CacheBuilder.newBuilder()
-				.expireAfterWrite(60, TimeUnit.MINUTES)
-				.build());
+																		.expireAfterWrite(60, TimeUnit.MINUTES)
+																		.build());
 				
 		cacheManager.setCaches(Arrays.asList(cache));
 		

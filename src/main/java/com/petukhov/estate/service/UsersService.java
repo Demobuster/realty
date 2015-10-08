@@ -6,7 +6,7 @@ import com.petukhov.estate.domain.Users;
 
 public interface UsersService {
 
-	public void addUser(Users user);
+	public boolean addUser(Users user);
 	
 	public List<Users> listUsers();
 	

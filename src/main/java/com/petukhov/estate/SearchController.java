@@ -5,13 +5,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.common.base.Charsets;
 import com.google.common.base.Preconditions;
 import com.petukhov.estate.service.HireService;
 import com.petukhov.estate.domain.Prop;
@@ -26,29 +24,6 @@ public class SearchController {
 
 	@Autowired
 	private PropertyService propertyService;
-	
-	@RequestMapping(value = "/addPropertyToDB", method = RequestMethod.POST)
-	public ModelAndView addPropertyToDB(
-			@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
-
-		propertyService.addProperty(propInfo.getPropAddress(),
-				propInfo.getPropDescription(), propInfo.getPropFee());
-
-		byte[] utf8AddressBytes = propInfo.getPropAddress().getBytes(Charsets.UTF_8);
-		byte[] utf8DescriptionBytes = propInfo.getPropDescription().getBytes(Charsets.UTF_8);
-		byte[] utf8FeeBytes = propInfo.getPropFee().getBytes(Charsets.UTF_8);
-
-		String utf8ResultAddress = new String(utf8AddressBytes, Charsets.UTF_8);
-		String utf8ResultDescription = new String(utf8DescriptionBytes, Charsets.UTF_8);
-		String utf8ResultFee = new String(utf8FeeBytes, Charsets.UTF_8);
-
-		ModelAndView mav = new ModelAndView("done");
-		mav.addObject("address", utf8ResultAddress);
-		mav.addObject("description", utf8ResultDescription);
-		mav.addObject("fee", utf8ResultFee);
-
-		return mav;
-	}
 
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ModelAndView searchPage() {

@@ -18,16 +18,15 @@
 
 <title>Welcome to Realty</title>
 
-<!-- Bootstrap core css -->
+<!-- bootstrap.css -->
+<link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- bootstrap.min.css -->
-<link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA"
-	rel="stylesheet" />
-<link href="https://googledrive.com/host/0BweevD4Le1puU1JPTkJiVFBaanM/"
-	rel="stylesheet">
-
+<link href="https://googledrive.com/host/0BweevD4Le1puU1JPTkJiVFBaanM" rel="stylesheet">
+<!-- mystyle.css -->
+<link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
 
 </head>
-<body style="background: url('${ backgroundIMG }') no-repeat scroll 0px 100% / cover transparent;">
+<body style="background: url('${ sessionScope.backgroundIMG }') no-repeat scroll 0px 100% / cover transparent;">
 
 	<msg:message code="Welcome.motto" var="motto" />
 	<msg:message code="Welcome.homeButton" var="home" />

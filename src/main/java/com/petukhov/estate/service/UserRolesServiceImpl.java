@@ -2,11 +2,13 @@ package com.petukhov.estate.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.petukhov.estate.dao.UserRolesDAO;
 import com.petukhov.estate.domain.UserRoles;
 
 @Service
+@Transactional
 public class UserRolesServiceImpl implements UserRolesService {
 	
 	@Autowired

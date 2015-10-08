@@ -1,8 +1,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
-
+ 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+	<!-- mystyle.css -->
+	<link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc"
+		rel="stylesheet">
 </head>
 
 <body>

@@ -21,8 +21,8 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc" rel="stylesheet" />
 <!-- validate.js -->
 <script type='text/javascript' src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
-
-<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+<!-- mystyle.css -->
+<link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
 
 <title>Login Page</title>
 
@@ -53,10 +53,10 @@
 
 			<label for="inputEmail" class="sr-only">Username</label>
 			<input type="text" name="username" placeholder="${ usernamePlaceholder }"
-			  id="inputEmail" class="form-control" onchange="validateUsername()">
+			  id="inputEmail" class="form-control" onchange="validateUsername()" required>
 			<label for="inputPassword" class="sr-only">Password</label>
 			<input type="password" name="password" placeholder="${ passwordPlaceholder }" 
-				id="inputPassword" class="form-control" onchange="validatePassword()"> 
+				id="inputPassword" class="form-control" onchange="validatePassword()" required> 
 			<input type="hidden" name="enabled" value="1"> 
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 

@@ -1,14 +1,14 @@
-	
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>	
 
 	<div class="container">
 		<!-- FOOTER -->
 		<footer>
 			<p class="pull-right">
 				<a href="${ param.pageToReturnTo }">${ param.linkToReturnTo }</a></p>
-				<c:if test="${ sesssionScope.isAdmin eq 'true' }">
+				<security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_CREATOR')">
 					<p><a href="dashboard"><img src="https://googledrive.com/host/0BweevD4Le1puVXE3cDE2TEZ6ZVk" 
 						class="img-responsive"></a></p>
-				</c:if>
+				</security:authorize>
 			
 			<p>&copy; 2015 Serzh Petukhov</p>
 		</footer>

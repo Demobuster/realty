@@ -15,17 +15,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional
 public class PropertyDAOImpl implements PropertyDAO {
 
 	@Autowired
 	private SessionFactory mySessionFactory;
 
 	@Override
-	@Transactional
 	@CacheEvict(value = CacheConfig.CACHED_PROPERTY, allEntries = true)
 	public void addProperty(String address, String description, String fee) {
 		Session session = mySessionFactory.getCurrentSession();
@@ -43,22 +40,33 @@ public class PropertyDAOImpl implements PropertyDAO {
 	}
 
 	@Override
-	@Transactional
 	@SuppressWarnings("unchecked")
 	@Cacheable(CacheConfig.CACHED_PROPERTY)
 	public List<Prop> listProperty() {
-		return mySessionFactory.getCurrentSession()
-				.createQuery("from Prop").list();
+		return mySessionFactory.getCurrentSession().createQuery("from Prop").list();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Prop> listPropertyForAdmin() {
+		return mySessionFactory.getCurrentSession().createQuery("from Prop").list();
 	}
 
 	@Override
-	@Transactional
 	public Prop getProperty(String id) {
 		return (Prop) mySessionFactory.getCurrentSession().get(Prop.class, id);
 	}
+	
+	@Override
+	public void removeProperty(String id) {
+		Prop prop = (Prop) mySessionFactory.getCurrentSession().get(Prop.class, id);
+    	
+        if (null != prop) {
+            mySessionFactory.getCurrentSession().delete(prop);
+        }	
+	}
 
 	@Override
-	@Transactional
 	public void indexProperty() throws Exception {
 		try {
 			Session session = mySessionFactory.getCurrentSession();
@@ -73,7 +81,6 @@ public class PropertyDAOImpl implements PropertyDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Prop> searchForProperty(String searchText) throws Exception {
 		try {
 			Session session = mySessionFactory.getCurrentSession();
@@ -98,5 +105,5 @@ public class PropertyDAOImpl implements PropertyDAO {
 			throw e;
 		}
 	}
-
+	
 }

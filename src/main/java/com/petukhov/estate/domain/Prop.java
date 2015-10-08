@@ -11,8 +11,6 @@ import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Store;
 
-import java.util.Date;
-
 @Entity
 @Indexed
 @Table(name = "prop")

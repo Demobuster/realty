@@ -1,17 +1,11 @@
 package com.petukhov.estate;
 
-import java.util.Collection;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.mobile.device.Device;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -28,24 +22,16 @@ public class SecurityController {
 	@Autowired
 	private UsersService usersService;
 	
-	private String backgroundIMG = "https://googledrive.com/host/0BweevD4Le1puMnhkcXhCUlV0WXM";
-	
 	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
-	public String defaultPage() {
-		return "redirect:/welcome";
-	}
-	
-	@RequestMapping(value = { "/welcome" }, method = RequestMethod.GET)
-	public ModelAndView getWelcomePage(Device device) {		
-		ModelAndView mav = new ModelAndView("welcome");
+	public ModelAndView getWelcomePage(Device device, HttpServletRequest request) {		
 		
 		if (device.isMobile() || device.isTablet()) {
-			backgroundIMG = "https://googledrive.com/host/0BweevD4Le1pueGFyOFUxcmo3ZWM";
-		} 
-			
-		mav.addObject("backgroundIMG", backgroundIMG);
+			request.getSession(true).setAttribute("backgroundIMG", "https://googledrive.com/host/0BweevD4Le1pueGFyOFUxcmo3ZWM");
+		} else {
+			request.getSession(true).setAttribute("backgroundIMG", "https://googledrive.com/host/0BweevD4Le1puMnhkcXhCUlV0WXM");
+		}
 	
-		return mav;
+		return new ModelAndView("welcome");
 	}
 
 	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
@@ -63,9 +49,9 @@ public class SecurityController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(
-			@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "error", required = false)  String error,
 			@RequestParam(value = "logout", required = false) String logout,
-															  HttpServletRequest request) {
+						Device device, HttpServletRequest request) {
 
 		ModelAndView model = new ModelAndView();
 		if (error != null) {
@@ -75,22 +61,21 @@ public class SecurityController {
 		if (logout != null) {
 			model.addObject("msg", "You've been logged out successfully.");
 			model.setViewName("welcome");
-			
-			model.addObject("backgroundIMG", backgroundIMG);
+		
+			if (device.isMobile() || device.isTablet()) {
+				request.getSession(true).setAttribute("backgroundIMG", "https://googledrive.com/host/0BweevD4Le1pueGFyOFUxcmo3ZWM");
+			} else {
+				request.getSession(true).setAttribute("backgroundIMG", "https://googledrive.com/host/0BweevD4Le1puMnhkcXhCUlV0WXM");
+			}
 			
 			return model;
 		}
-		
-		if (request.isUserInRole("ROLE_ADMIN")) {
-			request.getSession().setAttribute("isAdmin", "true");
-		} 
 		
 		model.setViewName("login");
 
 		return model;
 	}
 
-	// for 403 access denied page
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public ModelAndView accesssDenied() {
 

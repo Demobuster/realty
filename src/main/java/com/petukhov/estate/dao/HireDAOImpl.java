@@ -7,7 +7,6 @@ import com.petukhov.estate.domain.Hire;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class HireDAOImpl implements HireDAO {
@@ -26,7 +25,6 @@ public class HireDAOImpl implements HireDAO {
     }
     
     @Override
-    @Transactional
     public void removeHire(Integer id) {
     	Hire hire = (Hire) mySessionFactory.getCurrentSession().get(Hire.class, id);
     	

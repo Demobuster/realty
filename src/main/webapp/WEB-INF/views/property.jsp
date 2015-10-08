@@ -20,10 +20,16 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- style.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1pubHpOc2tsYV9pZEU" rel="stylesheet">
-<!-- jquery.min.js -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <!-- signin.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc" rel="stylesheet">
+<!-- mystyle.css -->
+<link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
+<!-- jquery.min.js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- validate.js -->
+<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
+<!-- asyncMethods.js -->
+<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
 
 
 <title>List Of Avaliable Properties</title>
@@ -77,7 +83,8 @@
 									<td>${property.address}</td>
 									<td>${property.description}</td>
 									<td>${property.fee}</td>
-									<td><a href="hire/${property.id}">Hire</a></td>
+									<td><a href="javascript:void(0);" id="hireLink" 
+												onclick="executeStateProperty('hire/${property.id}');">Hire</a></td>
 								</tr>
 							</c:forEach>
 						</c:if>

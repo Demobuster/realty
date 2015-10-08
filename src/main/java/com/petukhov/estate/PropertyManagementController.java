@@ -8,7 +8,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,7 +28,6 @@ public class PropertyManagementController {
 	@Autowired
 	private PropertyService propertyService;
 	
-	@Transactional
 	@RequestMapping(value = { "/hire/{propId}" }, method = RequestMethod.GET)
 	public String addHire(@PathVariable("propId") String propId) {
 
@@ -39,16 +37,19 @@ public class PropertyManagementController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		UserDetails userDetail = (UserDetails) auth.getPrincipal();
 
-		hire.setUsername(userDetail.getUsername());
-		hire.setAddress(prop.getAddress());
-		hire.setFee(Integer.parseInt(prop.getFee()));
-
-		hireService.addHire(hire);
-
+		if (null != prop) {
+			hire.setUsername(userDetail.getUsername());
+			hire.setAddress(prop.getAddress());
+			hire.setFee(Integer.parseInt(prop.getFee()));
+			
+			hireService.addHire(hire);
+		} else {
+			return "redirect:/property";
+		}
+		
 		return "redirect:/userPage";
 	}
 
-	@Transactional
 	@RequestMapping(value = { "getUsersHire" }, method = RequestMethod.GET)
 	@ResponseBody
 	public Map<String, Object> getUsersHireByJSON() {
@@ -63,8 +64,7 @@ public class PropertyManagementController {
 		
 		return map;
 	}
-
-	@Transactional
+	
 	@RequestMapping(value = { "/delete/{propId}" }, method = RequestMethod.GET)
 	public String deleteHire(@PathVariable("propId") Integer propId) {
 
@@ -75,8 +75,7 @@ public class PropertyManagementController {
 
 		return "redirect:/userPage";
 	}
-
-	@Transactional
+	
 	@RequestMapping(value = { "property" }, method = RequestMethod.GET)
 	public ModelAndView propertyPage() {
 

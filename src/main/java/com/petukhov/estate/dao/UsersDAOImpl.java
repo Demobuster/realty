@@ -5,7 +5,6 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.petukhov.estate.domain.Users;
 
@@ -16,19 +15,27 @@ public class UsersDAOImpl implements UsersDAO {
     private SessionFactory mySessionFactory;
 
 	@Override
-	public void addUser(Users user) {
-		mySessionFactory.getCurrentSession().save(user);
+	public boolean addUser(Users user) {
+		
+		for (Users u : this.listUsers()) {
+			if (null != u && u.getUsername().equals(user.getUsername())) {
+				// if users exist we have to return false value, because it'll mean that insertion failed
+				return false;
+			}
+		}
+		
+		mySessionFactory.getCurrentSession().save(user);	
+		
+		return true;
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	@Transactional
 	public List<Users> listUsers() {
 		return mySessionFactory.getCurrentSession().createQuery("from Users").list();
 	}
 
 	@Override
-	@Transactional
 	public void removeUser(String username) {
 		Users user = (Users) mySessionFactory.getCurrentSession().get(Users.class, username);
 		

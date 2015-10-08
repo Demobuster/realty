@@ -22,7 +22,8 @@
 <link href="https://googledrive.com/host/0BweevD4Le1pubHpOc2tsYV9pZEU" rel="stylesheet">
 <!-- validate.js -->
 <script type="text/javascript" src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
-	
+<!-- mystyle.css -->
+<link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
 
 </head>
 <body>	

@@ -10,14 +10,15 @@ import com.petukhov.estate.dao.UsersDAO;
 import com.petukhov.estate.domain.Users;
 
 @Service
+@Transactional
 public class UsersServiceImpl implements UsersService {
 	
 	@Autowired
 	private UsersDAO usersDAO;
 
 	@Override
-	public void addUser(Users user) {
-		usersDAO.addUser(user);
+	public boolean addUser(Users user) {
+		return usersDAO.addUser(user);
 	}
 
 	@Override
@@ -26,7 +27,6 @@ public class UsersServiceImpl implements UsersService {
 	}
 
 	@Override
-	@Transactional
 	public void removeUser(String username) {
 		usersDAO.removeUser(username);
 	}

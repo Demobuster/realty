@@ -17,32 +17,38 @@ public class PropertyServiceImpl implements PropertyService {
     private PropertyDAO propertyDAO;
 	
 	@Override
-	@Transactional
 	public void addProperty(String address, String description, String fee) {
 		propertyDAO.addProperty(address, description, fee);
 	}
 
 	@Override
-	@Transactional
 	public List<Prop> listProperty() {
 		return propertyDAO.listProperty();
+	}
+	
+	@Override
+	public List<Prop> listPropertyForAdmin() {
+		return propertyDAO.listPropertyForAdmin();
 	}
 
 	@Override
 	public Prop getProperty(String id) {
 		return propertyDAO.getProperty(id);
 	}
-
+	
 	@Override
-	@Transactional
+	public void removeProperty(String id) {
+		propertyDAO.removeProperty(id);
+	}
+	
+	@Override
 	public void indexProperty() throws Exception {
 		propertyDAO.indexProperty();
 	}
 
 	@Override
-	@Transactional
 	public List<Prop> searchForProperty(String searchText) throws Exception {
 		return propertyDAO.searchForProperty(searchText);
 	}
-	
+
 }
