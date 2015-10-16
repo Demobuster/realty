@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon"
-	href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
+	href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/">
 
 <title>Dashboard Page</title>
 <!-- bootstrap.min.css -->
@@ -92,11 +92,7 @@
 		</div>
 	</div>
 
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- bootstrap.min.js -->
-	<script type='text/javascript'
-		src='https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk'></script>
+	<script type='text/javascript' src='https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk'></script>
 </body>
 </html>

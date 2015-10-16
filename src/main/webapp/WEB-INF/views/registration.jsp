@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon"
-	href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/" />
+	href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/" />
 <title>Registration Page</title>
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
@@ -23,10 +23,7 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc"	rel="stylesheet" />
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc"	rel="stylesheet">
-<!-- jQuery -->
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- validate.js -->
-<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
+
 </head>
 
 <body>
@@ -50,17 +47,17 @@
 				${ welcome1 }  <span class="text-muted">${ welcome2 }</span>
 			</h2>
 			<input type="text" name="username" placeholder="${ usernamePlaceholder }" 
-			id="username" class="form-control" onchange="validateUsername();">
+			id="username" class="form-control" onchange="validateUsername();" required>
 			
 			<div class="form-group">
 				<div class="form-group">
 					<input type="password" name="password" placeholder="${ passwordPlaceholder }" data-minlength="6" 
-							class="form-control" id="inputPassword" required>
+							class="form-control" id="inputPassword" onchange="validatePassword();" required>
 					<span class="help-block">${ minimumChars }</span>
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" 
-					data-match-error="${ dontMatch }" placeholder="${ confirmPassword }" required>
+					data-match-error="${ dontMatch }" onchange="validatePassword();" placeholder="${ confirmPassword }" required>
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
@@ -89,12 +86,16 @@
 
 
 	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- jQuery -->
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- bootstrap.min.js -->
-	<script type='text/javascript'
-		src="https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk"></script>
+	<script type='text/javascript' src="https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk"></script>
 	<!-- validator.min.js -->
-	<script type='text/javascript'
-		src="https://googledrive.com/host/0BweevD4Le1puWE81X2VOakEwMGM"></script>
-
+	<script type='text/javascript'	src="https://googledrive.com/host/0BweevD4Le1puWE81X2VOakEwMGM"></script>
+	<!-- validate.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
+	<!-- asynchUsersCheck.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puYk0wZGlJaDFjZmc" type='text/javascript'></script>
+	
 </body>
 </html>

@@ -14,13 +14,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/" />
+<link rel="icon" href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/" />
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- signin.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc" rel="stylesheet" />
-<!-- validate.js -->
-<script type='text/javascript' src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
 
@@ -53,7 +51,7 @@
 
 			<label for="inputEmail" class="sr-only">Username</label>
 			<input type="text" name="username" placeholder="${ usernamePlaceholder }"
-			  id="inputEmail" class="form-control" onchange="validateUsername()" required>
+			  id="username" class="form-control" onchange="validateUsername()" required>
 			<label for="inputPassword" class="sr-only">Password</label>
 			<input type="password" name="password" placeholder="${ passwordPlaceholder }" 
 				id="inputPassword" class="form-control" onchange="validatePassword()" required> 
@@ -70,6 +68,9 @@
 		<jsp:param name="linkToReturnTo" value="${ home }"/>
         <jsp:param name="pageToReturnTo" value="welcome"/>
     </jsp:include>
+    
+    <!-- validate.js -->
+	<script type='text/javascript' src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
 	
 </body>
 </html>

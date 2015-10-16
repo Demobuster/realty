@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
+<link rel="icon" href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/">
 
 <title>Users Management Page</title>
 
@@ -20,23 +20,8 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- dashboard.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1pueTFOMU4zLXV5Znc" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
-
-<script>
-$.getJSON('getUsersList', function(data) {
-	for (var i = 0; i < data.usersList.length; i++) {
-        $('<tr>').append(
-            $('<td>').text(data.usersList[i].username),
-            $('<td>').text(data.usersList[i].password),
-            $('<td>').append(
-            		$('<a href=deleteUser/' + data.usersList[i].username + '>').text('Delete'))
-        ).appendTo('#displayUsers');
-	}
-});
-
-</script>
 
 </head>
 
@@ -76,5 +61,7 @@ $.getJSON('getUsersList', function(data) {
 	
 	<!-- bootstrap.min.js -->
 	<script type='text/javascript' src='https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk'></script>
+	<!-- JSONMethods.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
 </body>
 </html>

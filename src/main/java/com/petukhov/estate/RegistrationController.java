@@ -66,7 +66,7 @@ public class RegistrationController {
 	@ResponseBody
 	public AvailabilityStatus getAvailability(@RequestParam String username) {
 		for (Users u : usersService.listUsers()) {
-			if (u.getUsername().equals(username)) {
+			if ((u.getUsername().toLowerCase()).equals(username.toLowerCase())) {
 				return AvailabilityStatus.notAvailable(username);
 			}
 		}

@@ -13,15 +13,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="icon" href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
+<link rel="icon" href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/">
 <title>Add Property</title>
 
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- style.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1pubHpOc2tsYV9pZEU" rel="stylesheet">
-<!-- validate.js -->
-<script type="text/javascript" src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
 
@@ -51,6 +49,9 @@
     	<jsp:param name="linkToReturnTo" value="${ backToDashboard }"/>
         <jsp:param name="pageToReturnTo" value="dashboard"/>
     </jsp:include>
+    
+    <!-- validate.js -->
+	<script type="text/javascript" src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ"></script>
     
 </body>
 </html>

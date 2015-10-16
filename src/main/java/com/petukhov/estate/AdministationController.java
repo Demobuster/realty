@@ -59,7 +59,8 @@ public class AdministationController {
 			@ModelAttribute("PropModel") PropModel propInfo) throws Exception {
 
 		propertyService.addProperty(propInfo.getPropAddress(),
-				propInfo.getPropDescription(), propInfo.getPropFee());
+									propInfo.getPropDescription(), 
+									propInfo.getPropFee());
 
 		byte[] utf8AddressBytes = propInfo.getPropAddress().getBytes(Charsets.UTF_8);
 		byte[] utf8DescriptionBytes = propInfo.getPropDescription().getBytes(Charsets.UTF_8);

@@ -4,8 +4,8 @@
 	<table class="table table-striped" id="display">
 						<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=cs"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/czech_republic.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=cs"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puaHJ4RHNVOHo0aG8/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -15,8 +15,8 @@
     					</tr>
     					<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=de"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/germany.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=de"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puelVDSzJiNUZqQms/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -26,8 +26,8 @@
     					</tr>
     					<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=fr"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/france.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=fr"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1pueEVxcXhkTG5lR3c/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -37,8 +37,8 @@
     					</tr>
     					<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=et"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/estonia.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=et"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puWENKOU4tZ21scUk/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -48,8 +48,8 @@
     					</tr>
     					<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=en"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/usa.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=en"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puSDdzaGNHRWhwY0k/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -59,8 +59,8 @@
     					</tr>
 						<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=ru"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/russia.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=ru"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puUkV1S0R3aFlJNE0/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>
@@ -70,8 +70,8 @@
     					</tr>
     					<tr>
 							<td>
-        						<a href="http://realty-serzh.rhcloud.com/welcome?lang=sv"> 
-                					<img src="http://images.apple.com/global/elements/flags/30x30/sweden.png" 
+        						<a href="https://realty-serzh.rhcloud.com/welcome?lang=sv"> 
+                					<img src="https://googledrive.com/host/0BweevD4Le1puXzJZLVNRRjJuazA/" 
                 						alt="" height="20" width="20">
             					</a>
             				</td>

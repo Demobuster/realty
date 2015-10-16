@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon"
-	href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
+	href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/">
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- style.css -->
@@ -24,12 +24,7 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc" rel="stylesheet">
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
-<!-- jquery.min.js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<!-- validate.js -->
-<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
-<!-- asyncMethods.js -->
-<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
+
 
 
 <title>List Of Avaliable Properties</title>
@@ -49,7 +44,6 @@
 	<msg:message code="Search.reset" var="reset"/>
 	<msg:message code="Search.searchHelp" var="searchHelp"/>
 	<msg:message code="Main.backToExplorerLink" var="backToExplorerLink"/>
-	
 
 	<div class="container">
 		<form action="doSearch" method="post" class="form-signin">
@@ -98,6 +92,11 @@
     	<jsp:param name="linkToReturnTo" value="${ backToExplorerLink }"/>
         <jsp:param name="pageToReturnTo" value="property"/>
     </jsp:include>
+    
+	<!-- validate.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
+	<!-- JSONMethods.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
 
 </body>
 </html>

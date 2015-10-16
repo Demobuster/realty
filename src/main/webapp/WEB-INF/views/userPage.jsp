@@ -16,10 +16,8 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon"
-	href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
+	href="https://vignette2.wikia.nocookie.net/hotline-miami/images/f/f1/Untitled-3.png/revision/latest?cb=20150310222805/">
 <title>Files List</title>
-<link rel="icon"
-	href="http://images.akamai.steamusercontent.com/ugc/534009924279689988/BFE1433020371ED995DF224B54F8C13CBF8F3767/">
 <!-- bootstrap.min.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puZkNqOFZJNXgyNzA" rel="stylesheet" />
 <!-- style.css -->
@@ -28,12 +26,6 @@
 <link href="https://googledrive.com/host/0BweevD4Le1puYzMwQ016VmhHNXc" rel="stylesheet">
 <!-- mystyle.css -->
 <link href="https://googledrive.com/host/0BweevD4Le1puWEIzMmUwemZNdnc" rel="stylesheet">
-<!-- jquery.min.js -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<!-- validate.js -->
-<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
-<!-- asyncMethods.js -->
-<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
 
 <title>List Of Users Rent</title>
 </head>
@@ -76,12 +68,12 @@
     </jsp:include>
 	
 	<!-- Placed at the end of the document so the pages load faster -->
-	<!-- bootstrap.min.js -->
-	<script type='text/javascript'
-		src="https://googledrive.com/host/0BweevD4Le1puQU9ZZ0Z1Nm1peFk"></script>
+	<!-- validate.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puNng4V1Q0a3FOczQ" type='text/javascript'></script>
+	<!-- asyncMethods.js -->
+	<script src="https://googledrive.com/host/0BweevD4Le1puWnM2YVhZMzNQN0E" type='text/javascript'></script>
 	<!-- validator.min.js -->
-	<script type='text/javascript'
-		src="https://googledrive.com/host/0BweevD4Le1puWE81X2VOakEwMGM"></script>
+	<script type='text/javascript' src="https://googledrive.com/host/0BweevD4Le1puWE81X2VOakEwMGM"></script>
 
 </body>
 </html>
