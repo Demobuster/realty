@@ -26,10 +26,7 @@
 			username-parameter="username"
 			password-parameter="password" />
 		<logout logout-success-url="/login?logout"  />
-		
-		<!-- enable csrf protection -->
-		<csrf/>
-		
+
 		<!-- Prevent multi-enter. Only unique worksession allowed. Paralell access will be denied and redirected
 		 	 to 'authentication-failure-url' page -->
 		<session-management 
